@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8669FB819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8669FB719CAFCF100F6BF56 /* Cocoa.framework */; };
+		D8669FC219CAFCF100F6BF56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8669FC019CAFCF100F6BF56 /* InfoPlist.strings */; };
+		D8669FC419CAFCF100F6BF56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8669FC319CAFCF100F6BF56 /* main.m */; };
+		D8669FC819CAFCF100F6BF56 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D8669FC619CAFCF100F6BF56 /* Credits.rtf */; };
+		D8669FCB19CAFCF100F6BF56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8669FCA19CAFCF100F6BF56 /* AppDelegate.m */; };
+		D8669FCE19CAFCF100F6BF56 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8669FCC19CAFCF100F6BF56 /* MainMenu.xib */; };
+		D8669FD019CAFCF100F6BF56 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8669FCF19CAFCF100F6BF56 /* Images.xcassets */; };
+		D8669FD719CAFCF100F6BF56 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8669FD619CAFCF100F6BF56 /* XCTest.framework */; };
+		D8669FD819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8669FB719CAFCF100F6BF56 /* Cocoa.framework */; };
+		D8669FE019CAFCF100F6BF56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */; };
+		D8669FE219CAFCF100F6BF56 /* Network_SwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D8669FD919CAFCF100F6BF56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D8669FAC19CAFCF100F6BF56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D8669FB319CAFCF100F6BF56;
+			remoteInfo = "Network Switcher";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D8669FB419CAFCF100F6BF56 /* Network Switcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Network Switcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8669FB719CAFCF100F6BF56 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D8669FBA19CAFCF100F6BF56 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D8669FBB19CAFCF100F6BF56 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D8669FBC19CAFCF100F6BF56 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D8669FBF19CAFCF100F6BF56 /* Network Switcher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Network Switcher-Info.plist"; sourceTree = "<group>"; };
+		D8669FC119CAFCF100F6BF56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8669FC319CAFCF100F6BF56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D8669FC519CAFCF100F6BF56 /* Network Switcher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Network Switcher-Prefix.pch"; sourceTree = "<group>"; };
+		D8669FC719CAFCF100F6BF56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D8669FC919CAFCF100F6BF56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D8669FCA19CAFCF100F6BF56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D8669FCD19CAFCF100F6BF56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D8669FCF19CAFCF100F6BF56 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D8669FD519CAFCF100F6BF56 /* Network SwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Network SwitcherTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8669FD619CAFCF100F6BF56 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D8669FDD19CAFCF100F6BF56 /* Network SwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Network SwitcherTests-Info.plist"; sourceTree = "<group>"; };
+		D8669FDF19CAFCF100F6BF56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network_SwitcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8669FB119CAFCF100F6BF56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FB819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8669FD219CAFCF100F6BF56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FD819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */,
+				D8669FD719CAFCF100F6BF56 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8669FAB19CAFCF100F6BF56 = {
+			isa = PBXGroup;
+			children = (
+				D8669FBD19CAFCF100F6BF56 /* Network Switcher */,
+				D8669FDB19CAFCF100F6BF56 /* Network SwitcherTests */,
+				D8669FB619CAFCF100F6BF56 /* Frameworks */,
+				D8669FB519CAFCF100F6BF56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8669FB519CAFCF100F6BF56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FB419CAFCF100F6BF56 /* Network Switcher.app */,
+				D8669FD519CAFCF100F6BF56 /* Network SwitcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8669FB619CAFCF100F6BF56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FB719CAFCF100F6BF56 /* Cocoa.framework */,
+				D8669FD619CAFCF100F6BF56 /* XCTest.framework */,
+				D8669FB919CAFCF100F6BF56 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8669FB919CAFCF100F6BF56 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FBA19CAFCF100F6BF56 /* AppKit.framework */,
+				D8669FBB19CAFCF100F6BF56 /* CoreData.framework */,
+				D8669FBC19CAFCF100F6BF56 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D8669FBD19CAFCF100F6BF56 /* Network Switcher */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FC919CAFCF100F6BF56 /* AppDelegate.h */,
+				D8669FCA19CAFCF100F6BF56 /* AppDelegate.m */,
+				D8669FCC19CAFCF100F6BF56 /* MainMenu.xib */,
+				D8669FCF19CAFCF100F6BF56 /* Images.xcassets */,
+				D8669FBE19CAFCF100F6BF56 /* Supporting Files */,
+			);
+			path = "Network Switcher";
+			sourceTree = "<group>";
+		};
+		D8669FBE19CAFCF100F6BF56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FBF19CAFCF100F6BF56 /* Network Switcher-Info.plist */,
+				D8669FC019CAFCF100F6BF56 /* InfoPlist.strings */,
+				D8669FC319CAFCF100F6BF56 /* main.m */,
+				D8669FC519CAFCF100F6BF56 /* Network Switcher-Prefix.pch */,
+				D8669FC619CAFCF100F6BF56 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8669FDB19CAFCF100F6BF56 /* Network SwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */,
+				D8669FDC19CAFCF100F6BF56 /* Supporting Files */,
+			);
+			path = "Network SwitcherTests";
+			sourceTree = "<group>";
+		};
+		D8669FDC19CAFCF100F6BF56 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8669FDD19CAFCF100F6BF56 /* Network SwitcherTests-Info.plist */,
+				D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D8669FB319CAFCF100F6BF56 /* Network Switcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8669FE519CAFCF100F6BF56 /* Build configuration list for PBXNativeTarget "Network Switcher" */;
+			buildPhases = (
+				D8669FB019CAFCF100F6BF56 /* Sources */,
+				D8669FB119CAFCF100F6BF56 /* Frameworks */,
+				D8669FB219CAFCF100F6BF56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Network Switcher";
+			productName = "Network Switcher";
+			productReference = D8669FB419CAFCF100F6BF56 /* Network Switcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D8669FD419CAFCF100F6BF56 /* Network SwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8669FE819CAFCF100F6BF56 /* Build configuration list for PBXNativeTarget "Network SwitcherTests" */;
+			buildPhases = (
+				D8669FD119CAFCF100F6BF56 /* Sources */,
+				D8669FD219CAFCF100F6BF56 /* Frameworks */,
+				D8669FD319CAFCF100F6BF56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D8669FDA19CAFCF100F6BF56 /* PBXTargetDependency */,
+			);
+			name = "Network SwitcherTests";
+			productName = "Network SwitcherTests";
+			productReference = D8669FD519CAFCF100F6BF56 /* Network SwitcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8669FAC19CAFCF100F6BF56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Paulius Vindzigelskis";
+				TargetAttributes = {
+					D8669FD419CAFCF100F6BF56 = {
+						TestTargetID = D8669FB319CAFCF100F6BF56;
+					};
+				};
+			};
+			buildConfigurationList = D8669FAF19CAFCF100F6BF56 /* Build configuration list for PBXProject "Network Switcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D8669FAB19CAFCF100F6BF56;
+			productRefGroup = D8669FB519CAFCF100F6BF56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8669FB319CAFCF100F6BF56 /* Network Switcher */,
+				D8669FD419CAFCF100F6BF56 /* Network SwitcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D8669FB219CAFCF100F6BF56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FC219CAFCF100F6BF56 /* InfoPlist.strings in Resources */,
+				D8669FD019CAFCF100F6BF56 /* Images.xcassets in Resources */,
+				D8669FC819CAFCF100F6BF56 /* Credits.rtf in Resources */,
+				D8669FCE19CAFCF100F6BF56 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8669FD319CAFCF100F6BF56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FE019CAFCF100F6BF56 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8669FB019CAFCF100F6BF56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FCB19CAFCF100F6BF56 /* AppDelegate.m in Sources */,
+				D8669FC419CAFCF100F6BF56 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8669FD119CAFCF100F6BF56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8669FE219CAFCF100F6BF56 /* Network_SwitcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D8669FDA19CAFCF100F6BF56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D8669FB319CAFCF100F6BF56 /* Network Switcher */;
+			targetProxy = D8669FD919CAFCF100F6BF56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D8669FC019CAFCF100F6BF56 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8669FC119CAFCF100F6BF56 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D8669FC619CAFCF100F6BF56 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8669FC719CAFCF100F6BF56 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D8669FCC19CAFCF100F6BF56 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8669FCD19CAFCF100F6BF56 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D8669FDF19CAFCF100F6BF56 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D8669FE319CAFCF100F6BF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D8669FE419CAFCF100F6BF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D8669FE619CAFCF100F6BF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
+				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D8669FE719CAFCF100F6BF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
+				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D8669FE919CAFCF100F6BF56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Network Switcher.app/Contents/MacOS/Network Switcher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Network SwitcherTests/Network SwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D8669FEA19CAFCF100F6BF56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Network Switcher.app/Contents/MacOS/Network Switcher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
+				INFOPLIST_FILE = "Network SwitcherTests/Network SwitcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8669FAF19CAFCF100F6BF56 /* Build configuration list for PBXProject "Network Switcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8669FE319CAFCF100F6BF56 /* Debug */,
+				D8669FE419CAFCF100F6BF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8669FE519CAFCF100F6BF56 /* Build configuration list for PBXNativeTarget "Network Switcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8669FE619CAFCF100F6BF56 /* Debug */,
+				D8669FE719CAFCF100F6BF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D8669FE819CAFCF100F6BF56 /* Build configuration list for PBXNativeTarget "Network SwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8669FE919CAFCF100F6BF56 /* Debug */,
+				D8669FEA19CAFCF100F6BF56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8669FAC19CAFCF100F6BF56 /* Project object */;
+}
