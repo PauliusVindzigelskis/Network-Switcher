@@ -18,6 +18,7 @@
 		D8669FD819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8669FB719CAFCF100F6BF56 /* Cocoa.framework */; };
 		D8669FE019CAFCF100F6BF56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */; };
 		D8669FE219CAFCF100F6BF56 /* Network_SwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */; };
+		D89EC1DC19E42A8F00BD6C2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89EC1DB19E42A8F00BD6C2E /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D8669FDD19CAFCF100F6BF56 /* Network SwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Network SwitcherTests-Info.plist"; sourceTree = "<group>"; };
 		D8669FDF19CAFCF100F6BF56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network_SwitcherTests.m; sourceTree = "<group>"; };
+		D89EC1DB19E42A8F00BD6C2E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89EC1DC19E42A8F00BD6C2E /* WebKit.framework in Frameworks */,
 				D8669FB819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		D8669FB619CAFCF100F6BF56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D89EC1DB19E42A8F00BD6C2E /* WebKit.framework */,
 				D8669FB719CAFCF100F6BF56 /* Cocoa.framework */,
 				D8669FD619CAFCF100F6BF56 /* XCTest.framework */,
 				D8669FB919CAFCF100F6BF56 /* Other Frameworks */,
@@ -343,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
@@ -376,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -466,6 +470,7 @@
 				D8669FE719CAFCF100F6BF56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8669FE819CAFCF100F6BF56 /* Build configuration list for PBXNativeTarget "Network SwitcherTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +479,7 @@
 				D8669FEA19CAFCF100F6BF56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
