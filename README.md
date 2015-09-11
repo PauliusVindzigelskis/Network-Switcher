@@ -1,3 +1,5 @@
+### The mighty Network Switcher
+
 ## What is it for?
 
 Switch between active network configurations without unplugging cables. Useful when You have private connection and public connection at same time - for example private intranet LAN and public WIFI at workplace.
