@@ -15,3 +15,7 @@ Well.. It only changes connection priorities in network settings by resorting co
 Mac won't let You just change network settings without your permission. It will lose permission right after quitting app, so next time launching app, OS will ask again. 
 
 P. S. No need to enter password each time when switching connections - only at app start up.
+
+## Download compiled app
+
+[Network Switcher.app.zip](https://github.com/PauliusVindzigelskis/Network-Switcher/files/530453/Network.Switcher.app.zip)
