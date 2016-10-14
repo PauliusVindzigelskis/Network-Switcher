@@ -1,5 +1,7 @@
 ### The mighty Network Switcher
 
+![](https://cloud.githubusercontent.com/assets/2383901/19402464/ce343cb6-9226-11e6-9ade-b7aea4ac1c22.png)
+
 ## What is it for?
 
 Switch between active network configurations without unplugging cables. Useful when You have private connection and public connection at same time - for example private intranet LAN and public WIFI at workplace.
