@@ -76,7 +76,6 @@
     
     NSMutableArray *networkListNames = [NSMutableArray new];
     
-    int i=0;
     for (id networkID_ in networkOrder)
     {
         CFStringRef networkID = (__bridge CFStringRef)networkID_;
@@ -92,7 +91,6 @@
             }
         }
         [networkListNames addObject:(__bridge NSString *)SCNetworkServiceGetName(selected)];
-        i++;
     }
     NSLog(@"list:\n%@",networkListNames);
     
