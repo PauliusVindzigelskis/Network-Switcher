@@ -18,4 +18,4 @@ P. S. No need to enter password each time when switching connections - only at a
 
 ## Download compiled app
 
-[Network Switcher.app.zip](https://github.com/PauliusVindzigelskis/Network-Switcher/files/530453/Network.Switcher.app.zip)
+[Network Switcher.app.zip](https://github.com/PauliusVindzigelskis/Network-Switcher/files/556926/Network.Switcher.app.zip)
