@@ -34,6 +34,7 @@
     NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self.statusMenu];
     NSImage *normalImage = [NSImage imageNamed:@"icn_switcher_default"];
+    [normalImage setTemplate:YES];
     [statusItem setImage:normalImage];
     [statusItem setAlternateImage:[NSImage imageNamed:@"icn_switcher_alt"]];
     [statusItem setHighlightMode:YES];
