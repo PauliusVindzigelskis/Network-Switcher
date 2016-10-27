@@ -155,67 +155,67 @@
     NSLog(@"Preferences are locked: %@", success ? @"True" : @"False");
     if (success)
     {
-    SCNetworkSetRef networkSet = SCNetworkSetCopyCurrent(preferences);
-    NSArray *networkSetServices = (__bridge_transfer NSArray *) SCNetworkSetCopyServices(networkSet);
-    NSArray *networkOrder = (__bridge NSArray *)(SCNetworkSetGetServiceOrder(networkSet));
-    
-    NSMutableArray *networkListNames = [NSMutableArray new];
-    
-    int i=0;
-    for (id networkID_ in networkOrder)
-    {
-        CFStringRef networkID = (__bridge CFStringRef)networkID_;
-        SCNetworkServiceRef	selected	= NULL;
-        for (id networkService_ in networkSetServices) {
-            SCNetworkServiceRef networkService = (__bridge SCNetworkServiceRef) networkService_;
-            
-            CFStringRef serviceID = SCNetworkServiceGetServiceID(networkService);
-            
-            if (CFEqual(networkID, serviceID)) {
-                selected = networkService;
-                break;
+        SCNetworkSetRef networkSet = SCNetworkSetCopyCurrent(preferences);
+        NSArray *networkSetServices = (__bridge_transfer NSArray *) SCNetworkSetCopyServices(networkSet);
+        NSArray *networkOrder = (__bridge NSArray *)(SCNetworkSetGetServiceOrder(networkSet));
+        
+        NSMutableArray *networkListNames = [NSMutableArray new];
+        
+        int i=0;
+        for (id networkID_ in networkOrder)
+        {
+            CFStringRef networkID = (__bridge CFStringRef)networkID_;
+            SCNetworkServiceRef	selected	= NULL;
+            for (id networkService_ in networkSetServices) {
+                SCNetworkServiceRef networkService = (__bridge SCNetworkServiceRef) networkService_;
+                
+                CFStringRef serviceID = SCNetworkServiceGetServiceID(networkService);
+                
+                if (CFEqual(networkID, serviceID)) {
+                    selected = networkService;
+                    break;
+                }
             }
+            [networkListNames addObject:(__bridge NSString *)SCNetworkServiceGetName(selected)];
+            i++;
         }
-        [networkListNames addObject:(__bridge NSString *)SCNetworkServiceGetName(selected)];
-        i++;
-    }
-    NSLog(@"selected:%@, list:\n%@",itemTitle, networkListNames);
-    NSUInteger selectedIndex = [networkListNames indexOfObject:itemTitle];
-    
-    if (selectedIndex > 0)
-    {
+        NSLog(@"selected:%@, list:\n%@",itemTitle, networkListNames);
+        NSUInteger selectedIndex = [networkListNames indexOfObject:itemTitle];
         
-        CFMutableArrayRef mutableOrder = CFArrayCreateMutableCopy(NULL, 0, (SCNetworkSetGetServiceOrder(networkSet)));
+        if (selectedIndex > 0)
+        {
+            
+            CFMutableArrayRef mutableOrder = CFArrayCreateMutableCopy(NULL, 0, (SCNetworkSetGetServiceOrder(networkSet)));
+            
+            NSLog(@"Order before:%@", mutableOrder);
+            
+            const void* data = CFArrayGetValueAtIndex(mutableOrder, selectedIndex);
+            CFArrayRemoveValueAtIndex(mutableOrder, selectedIndex);
+            CFArrayInsertValueAtIndex(mutableOrder, 0, data);
+            
+            NSLog(@"Order after:%@", mutableOrder);
+            
+            SCNetworkSetSetServiceOrder(networkSet, mutableOrder);
+            
+            
+            SCPreferencesCommitChanges(preferences);
+            Boolean result = SCPreferencesApplyChanges(preferences);
+            SCPreferencesSynchronize(preferences);
+            
+            NSLog(@"Change Success: %@", result ? @"True" : @"False");
+            
+            SCDynamicStoreRef ds = SCDynamicStoreCreate(NULL, CFSTR("myapp"), NULL, NULL);
+            CFRelease(ds);
+            
+            //update UI
+            [networkListNames removeObjectAtIndex:selectedIndex];
+            [networkListNames insertObject:itemTitle atIndex:0];
+            
+            [self createMenuListFromStrings:[NSArray arrayWithArray:networkListNames] selected:0];
+        }
         
-        NSLog(@"Order before:%@", mutableOrder);
-        
-        const void* data = CFArrayGetValueAtIndex(mutableOrder, selectedIndex);
-        CFArrayRemoveValueAtIndex(mutableOrder, selectedIndex);
-        CFArrayInsertValueAtIndex(mutableOrder, 0, data);
-        
-        NSLog(@"Order after:%@", mutableOrder);
-        
-        SCNetworkSetSetServiceOrder(networkSet, mutableOrder);
-        
-        
-        SCPreferencesCommitChanges(preferences);
-        Boolean result = SCPreferencesApplyChanges(preferences);
-        SCPreferencesSynchronize(preferences);
-        
-        NSLog(@"Change Success: %@", result ? @"True" : @"False");
-        
-        SCDynamicStoreRef ds = SCDynamicStoreCreate(NULL, CFSTR("myapp"), NULL, NULL);
-        CFRelease(ds);
-        
-        //update UI
-        [networkListNames removeObjectAtIndex:selectedIndex];
-        [networkListNames insertObject:itemTitle atIndex:0];
-        
-        [self createMenuListFromStrings:[NSArray arrayWithArray:networkListNames] selected:0];
-    }
-    
-    Boolean unlocked = SCPreferencesUnlock(preferences);
-    NSLog(@"Preferences are unlocked: %@", unlocked ? @"True" : @"False");
+        Boolean unlocked = SCPreferencesUnlock(preferences);
+        NSLog(@"Preferences are unlocked: %@", unlocked ? @"True" : @"False");
     } else {
         NSLog(@"Aborting operation...");
     }
