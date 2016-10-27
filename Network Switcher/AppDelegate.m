@@ -33,7 +33,8 @@
     //setup menulet
     NSStatusItem *statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:self.statusMenu];
-    [statusItem setImage:[NSImage imageNamed:@"lan_icon"]];
+    NSImage *normalImage = [NSImage imageNamed:@"icn_switcher_default"];
+    [statusItem setImage:normalImage];
     [statusItem setHighlightMode:YES];
     self.statusItem = statusItem;
     [self setupNetworkList];
