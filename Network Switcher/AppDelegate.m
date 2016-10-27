@@ -35,6 +35,7 @@
     [statusItem setMenu:self.statusMenu];
     NSImage *normalImage = [NSImage imageNamed:@"icn_switcher_default"];
     [statusItem setImage:normalImage];
+    [statusItem setAlternateImage:[NSImage imageNamed:@"icn_switcher_alt"]];
     [statusItem setHighlightMode:YES];
     self.statusItem = statusItem;
     [self setupNetworkList];
