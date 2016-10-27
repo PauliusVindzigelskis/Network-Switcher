@@ -14,6 +14,7 @@
 
 @property (strong) IBOutlet NSMenu *statusMenu;
 @property (strong) NSStatusItem *statusItem;
+@property (weak) NSMenuItem *launchStatusItem;
 
 
 @end
@@ -22,9 +23,76 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
-    // Insert code here to initialize your application
 
+
+}
+
+- (NSString*) startupPlistPathWithDocumentsDirectoryPath:(NSString **)directoryPath
+{
+    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+    
+    NSString *documentsDirectory = [@"~/Library/LaunchAgents/" stringByExpandingTildeInPath];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
+    {
+        documentsDirectory = [@"~/Library/LaunchDaemons/" stringByExpandingTildeInPath];
+    }
+    
+    if (directoryPath)
+    {
+        *directoryPath = documentsDirectory;
+    }
+    
+    NSString *plistPath = [[documentsDirectory stringByAppendingPathComponent:bundleID] stringByAppendingString:@".plist"];
+    
+    return plistPath;
+}
+
+- (BOOL) isStartupItem
+{
+    return [[NSFileManager defaultManager] fileExistsAtPath:[self startupPlistPathWithDocumentsDirectoryPath:nil]];
+}
+
+- (void) setIsStartupItem:(BOOL)addStartupItem
+{
+    NSString *documentsDirectory;
+    NSString *plistPath = [self startupPlistPathWithDocumentsDirectoryPath:&documentsDirectory];
+    
+    if (addStartupItem)
+    {
+        //add file
+        NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+        NSString *appPath = [[[NSBundle mainBundle] bundlePath] stringByAbbreviatingWithTildeInPath];
+        NSDictionary *myDict = @{
+                                 @"LaunchOnlyOnce" : @(YES),
+                                 @"ProgramArguments" : @[
+                                         @"/usr/bin/open",
+                                         @"-n",
+                                         appPath
+                                         ],
+                                 @"KeepAlive" : @(NO),
+                                 @"Label" : bundleID
+                                 };
+        
+        if ([[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
+        {
+            BOOL success = [myDict writeToFile:plistPath atomically: YES];
+            NSLog(@"Saved startup item successfully: %@", success ? @"YES" : @"NO");
+            if (success)
+            {
+                //change status
+                self.launchStatusItem.state = 1;
+            }
+        }
+    } else {
+        //remove file
+        NSError *error;
+        [[NSFileManager defaultManager] removeItemAtPath:plistPath error:&error];
+        if (!error)
+        {
+            //change status
+            self.launchStatusItem.state = 0;
+        }
+    }
 }
 
 -(void)awakeFromNib
@@ -40,6 +108,7 @@
     [statusItem setHighlightMode:YES];
     self.statusItem = statusItem;
     [self setupNetworkList];
+    
 }
 
 - (SCPreferencesRef) preferences
@@ -113,12 +182,23 @@
         }
     }
     
-    //add quit option
+    //add StartupMenu status
+    [self.statusMenu addItem:[NSMenuItem separatorItem]];
+    NSMenuItem *startupItem = [self.statusMenu addItemWithTitle:@"Launch when Mac starts up" action:@selector(startupItemSelected:) keyEquivalent:@"StartUp"];
+    startupItem.state = [self isStartupItem];
+    self.launchStatusItem = startupItem;
+    
+    //add Credits and Quit menu
     [self.statusMenu addItem:[NSMenuItem separatorItem]];
     [self.statusMenu addItemWithTitle:@"Credits" action:@selector(aboutPressed:) keyEquivalent:@""];
     [self.statusMenu addItemWithTitle:@"Quit application" action:@selector(quitApplicationPressed) keyEquivalent:@""];
     
     
+}
+
+- (void) startupItemSelected:(id)source
+{
+    [self setIsStartupItem:![self isStartupItem]];
 }
 
 - (void) quitApplicationPressed
