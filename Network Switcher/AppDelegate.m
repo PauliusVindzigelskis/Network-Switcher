@@ -153,7 +153,8 @@
     Boolean success = SCPreferencesLock(preferences, YES);
     
     NSLog(@"Preferences are locked: %@", success ? @"True" : @"False");
-    
+    if (success)
+    {
     SCNetworkSetRef networkSet = SCNetworkSetCopyCurrent(preferences);
     NSArray *networkSetServices = (__bridge_transfer NSArray *) SCNetworkSetCopyServices(networkSet);
     NSArray *networkOrder = (__bridge NSArray *)(SCNetworkSetGetServiceOrder(networkSet));
@@ -215,6 +216,9 @@
     
     Boolean unlocked = SCPreferencesUnlock(preferences);
     NSLog(@"Preferences are unlocked: %@", unlocked ? @"True" : @"False");
+    } else {
+        NSLog(@"Aborting operation...");
+    }
 }
 
 @end
