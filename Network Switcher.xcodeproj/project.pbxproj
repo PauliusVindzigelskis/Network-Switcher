@@ -393,6 +393,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
 				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.newguystudio.Network-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +407,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
 				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.newguystudio.Network-Switcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
