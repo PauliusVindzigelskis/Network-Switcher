@@ -32,10 +32,10 @@
     NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
     
     NSString *documentsDirectory = [@"~/Library/LaunchAgents/" stringByExpandingTildeInPath];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
-    {
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
+//    {
         documentsDirectory = [@"~/Library/LaunchDaemons/" stringByExpandingTildeInPath];
-    }
+//    }
     
     if (directoryPath)
     {
@@ -63,7 +63,6 @@
         NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
         NSString *appPath = [[[NSBundle mainBundle] bundlePath] stringByAbbreviatingWithTildeInPath];
         NSDictionary *myDict = @{
-                                 @"LaunchOnlyOnce" : @(YES),
                                  @"ProgramArguments" : @[
                                          @"/usr/bin/open",
                                          @"-n",
@@ -73,15 +72,18 @@
                                  @"Label" : bundleID
                                  };
         
-        if ([[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
+        if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
         {
-            BOOL success = [myDict writeToFile:plistPath atomically: YES];
-            NSLog(@"Saved startup item successfully: %@", success ? @"YES" : @"NO");
-            if (success)
-            {
-                //change status
-                self.launchStatusItem.state = 1;
-            }
+            NSError *error;
+            [[NSFileManager defaultManager] createDirectoryAtPath:documentsDirectory withIntermediateDirectories:NO attributes:nil error:&error];
+            NSLog(@"%@ directory created: %@", documentsDirectory, !error ? @"YES" : @"NO");
+        }
+        BOOL success = [myDict writeToFile:plistPath atomically: YES];
+        NSLog(@"Saved startup item successfully: %@", success ? @"YES" : @"NO");
+        if (success)
+        {
+            //change status
+            self.launchStatusItem.state = 1;
         }
     } else {
         //remove file
