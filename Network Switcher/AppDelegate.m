@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <ServiceManagement/ServiceManagement.h>
+#import "StartupHandler.h"
 
 @interface AppDelegate()
 
@@ -25,76 +26,6 @@
 {
 
 
-}
-
-- (NSString*) startupPlistPathWithDocumentsDirectoryPath:(NSString **)directoryPath
-{
-    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
-    
-    NSString *documentsDirectory = [@"~/Library/LaunchAgents/" stringByExpandingTildeInPath];
-//    if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
-//    {
-        documentsDirectory = [@"~/Library/LaunchDaemons/" stringByExpandingTildeInPath];
-//    }
-    
-    if (directoryPath)
-    {
-        *directoryPath = documentsDirectory;
-    }
-    
-    NSString *plistPath = [[documentsDirectory stringByAppendingPathComponent:bundleID] stringByAppendingString:@".plist"];
-    
-    return plistPath;
-}
-
-- (BOOL) isStartupItem
-{
-    return [[NSFileManager defaultManager] fileExistsAtPath:[self startupPlistPathWithDocumentsDirectoryPath:nil]];
-}
-
-- (void) setIsStartupItem:(BOOL)addStartupItem
-{
-    NSString *documentsDirectory;
-    NSString *plistPath = [self startupPlistPathWithDocumentsDirectoryPath:&documentsDirectory];
-    
-    if (addStartupItem)
-    {
-        //add file
-        NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
-        NSString *appPath = [[[NSBundle mainBundle] bundlePath] stringByAbbreviatingWithTildeInPath];
-        NSDictionary *myDict = @{
-                                 @"ProgramArguments" : @[
-                                         @"/usr/bin/open",
-                                         @"-n",
-                                         appPath
-                                         ],
-                                 @"KeepAlive" : @(NO),
-                                 @"Label" : bundleID
-                                 };
-        
-        if (![[NSFileManager defaultManager] fileExistsAtPath:documentsDirectory])
-        {
-            NSError *error;
-            [[NSFileManager defaultManager] createDirectoryAtPath:documentsDirectory withIntermediateDirectories:NO attributes:nil error:&error];
-            NSLog(@"%@ directory created: %@", documentsDirectory, !error ? @"YES" : @"NO");
-        }
-        BOOL success = [myDict writeToFile:plistPath atomically: YES];
-        NSLog(@"Saved startup item successfully: %@", success ? @"YES" : @"NO");
-        if (success)
-        {
-            //change status
-            self.launchStatusItem.state = 1;
-        }
-    } else {
-        //remove file
-        NSError *error;
-        [[NSFileManager defaultManager] removeItemAtPath:plistPath error:&error];
-        if (!error)
-        {
-            //change status
-            self.launchStatusItem.state = 0;
-        }
-    }
 }
 
 -(void)awakeFromNib
@@ -187,7 +118,7 @@
     //add StartupMenu status
     [self.statusMenu addItem:[NSMenuItem separatorItem]];
     NSMenuItem *startupItem = [self.statusMenu addItemWithTitle:@"Launch when Mac starts up" action:@selector(startupItemSelected:) keyEquivalent:@"StartUp"];
-    startupItem.state = [self isStartupItem];
+    startupItem.state = [StartupHandler isLaunchOnLoginEnabled];
     self.launchStatusItem = startupItem;
     
     //add Credits and Quit menu
@@ -200,7 +131,8 @@
 
 - (void) startupItemSelected:(id)source
 {
-    [self setIsStartupItem:![self isStartupItem]];
+    [StartupHandler setLaunchOnLogin:![StartupHandler isLaunchOnLoginEnabled]];
+    self.launchStatusItem.state = [StartupHandler isLaunchOnLoginEnabled];
 }
 
 - (void) quitApplicationPressed
