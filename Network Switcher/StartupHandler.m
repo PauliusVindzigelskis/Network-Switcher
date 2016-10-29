@@ -37,7 +37,7 @@
     
     if (launchOnLogin) {
         NSDictionary *properties;
-        properties = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"com.apple.loginitem.HideOnLaunch"];
+        properties = [NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:@"com.apple.loginitem.HideOnLaunch"];
         LSSharedFileListItemRef itemRef = LSSharedFileListInsertItemURL(loginItemsListRef, kLSSharedFileListItemLast, NULL, NULL, (CFURLRef)bundleURL, (CFDictionaryRef)properties,NULL);
         if (itemRef) {
             CFRelease(itemRef);
