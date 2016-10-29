@@ -218,6 +218,10 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Paulius Vindzigelskis";
 				TargetAttributes = {
+					D8669FB319CAFCF100F6BF56 = {
+						DevelopmentTeam = TB7D8MNLYX;
+						ProvisioningStyle = Automatic;
+					};
 					D8669FD419CAFCF100F6BF56 = {
 						TestTargetID = D8669FB319CAFCF100F6BF56;
 					};
@@ -403,7 +407,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TB7D8MNLYX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
 				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
@@ -417,7 +423,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = TB7D8MNLYX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Network Switcher/Network Switcher-Prefix.pch";
 				INFOPLIST_FILE = "Network Switcher/Network Switcher-Info.plist";
