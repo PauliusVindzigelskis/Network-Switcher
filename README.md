@@ -15,6 +15,6 @@ Mac won't let You just change network settings without your permission. It will 
 
 P. S. No need to enter password each time when switching connections - only at app start up.
 
-## Download compiled app
+## Download exported app
 
-[Network Switcher.app.zip](https://github.com/PauliusVindzigelskis/Network-Switcher/files/556926/Network.Switcher.app.zip)
+[Network Switcher.dmg](https://github.com/PauliusVindzigelskis/Network-Switcher/files/559689/Network.Switcher.zip)
