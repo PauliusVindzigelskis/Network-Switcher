@@ -18,4 +18,5 @@ P. S. No need to enter password each time when switching connections - only at a
 ## Download exported app
 
 1.30.0 [Release Notes](https://github.com/PauliusVindzigelskis/Network-Switcher/wiki/Release-Notes)
+
 [Network Switcher.dmg](https://github.com/PauliusVindzigelskis/Network-Switcher/files/559689/Network.Switcher.zip)
