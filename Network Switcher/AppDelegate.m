@@ -148,11 +148,15 @@
     NSAttributedString *attString = [[NSAttributedString alloc]
                                      initWithRTF:rtfData documentAttributes:nil];
     NSString* string = [attString string];
-    
+    NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
     
     NSAlert *alert = [NSAlert new];
     
-    alert.messageText = @"Credits:";
+    alert.messageText = [NSString stringWithFormat:@"%@ v%@:%@",
+                         bundleInfo[@"CFBundleName"],
+                         bundleInfo[@"CFBundleShortVersionString"],
+                         bundleInfo[@"CFBundleVersion"]
+                         ];
     alert.informativeText = string;
     
     [alert runModal];
