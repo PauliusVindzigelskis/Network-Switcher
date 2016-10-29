@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 #import <ServiceManagement/ServiceManagement.h>
+#import "StartupHandler.h"
 
 @interface AppDelegate()
 
 @property (strong) IBOutlet NSMenu *statusMenu;
 @property (strong) NSStatusItem *statusItem;
+@property (weak) NSMenuItem *launchStatusItem;
 
 
 @end
@@ -22,8 +24,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
-    // Insert code here to initialize your application
+
 
 }
 
@@ -40,6 +41,7 @@
     [statusItem setHighlightMode:YES];
     self.statusItem = statusItem;
     [self setupNetworkList];
+    
 }
 
 - (SCPreferencesRef) preferences
@@ -113,12 +115,24 @@
         }
     }
     
-    //add quit option
+    //add StartupMenu status
+    [self.statusMenu addItem:[NSMenuItem separatorItem]];
+    NSMenuItem *startupItem = [self.statusMenu addItemWithTitle:@"Launch when Mac starts up" action:@selector(startupItemSelected:) keyEquivalent:@"StartUp"];
+    startupItem.state = [StartupHandler isLaunchOnLoginEnabled];
+    self.launchStatusItem = startupItem;
+    
+    //add Credits and Quit menu
     [self.statusMenu addItem:[NSMenuItem separatorItem]];
     [self.statusMenu addItemWithTitle:@"Credits" action:@selector(aboutPressed:) keyEquivalent:@""];
     [self.statusMenu addItemWithTitle:@"Quit application" action:@selector(quitApplicationPressed) keyEquivalent:@""];
     
     
+}
+
+- (void) startupItemSelected:(id)source
+{
+    [StartupHandler setLaunchOnLogin:![StartupHandler isLaunchOnLoginEnabled]];
+    self.launchStatusItem.state = [StartupHandler isLaunchOnLoginEnabled];
 }
 
 - (void) quitApplicationPressed

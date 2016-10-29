@@ -18,6 +18,7 @@
 		D8669FD819CAFCF100F6BF56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8669FB719CAFCF100F6BF56 /* Cocoa.framework */; };
 		D8669FE019CAFCF100F6BF56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */; };
 		D8669FE219CAFCF100F6BF56 /* Network_SwitcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */; };
+		D89CCF8C1DC4295500DD62FD /* StartupHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D89CCF8B1DC4295500DD62FD /* StartupHandler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D89EC1DC19E42A8F00BD6C2E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89EC1DB19E42A8F00BD6C2E /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		D8669FDD19CAFCF100F6BF56 /* Network SwitcherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Network SwitcherTests-Info.plist"; sourceTree = "<group>"; };
 		D8669FDF19CAFCF100F6BF56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D8669FE119CAFCF100F6BF56 /* Network_SwitcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network_SwitcherTests.m; sourceTree = "<group>"; };
+		D89CCF8A1DC4295500DD62FD /* StartupHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupHandler.h; sourceTree = "<group>"; };
+		D89CCF8B1DC4295500DD62FD /* StartupHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupHandler.m; sourceTree = "<group>"; };
 		D89EC1DB19E42A8F00BD6C2E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -119,6 +122,7 @@
 		D8669FBD19CAFCF100F6BF56 /* Network Switcher */ = {
 			isa = PBXGroup;
 			children = (
+				D89CCF891DC4293300DD62FD /* StartupHandler */,
 				D8669FC919CAFCF100F6BF56 /* AppDelegate.h */,
 				D8669FCA19CAFCF100F6BF56 /* AppDelegate.m */,
 				D8669FCC19CAFCF100F6BF56 /* MainMenu.xib */,
@@ -156,6 +160,15 @@
 				D8669FDE19CAFCF100F6BF56 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D89CCF891DC4293300DD62FD /* StartupHandler */ = {
+			isa = PBXGroup;
+			children = (
+				D89CCF8A1DC4295500DD62FD /* StartupHandler.h */,
+				D89CCF8B1DC4295500DD62FD /* StartupHandler.m */,
+			);
+			name = StartupHandler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +271,7 @@
 			files = (
 				D8669FCB19CAFCF100F6BF56 /* AppDelegate.m in Sources */,
 				D8669FC419CAFCF100F6BF56 /* main.m in Sources */,
+				D89CCF8C1DC4295500DD62FD /* StartupHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
