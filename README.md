@@ -1,5 +1,5 @@
 ### The mighty Network Switcher
-![](https://cloud.githubusercontent.com/assets/2383901/19784108/1a7ed22e-9c5a-11e6-80b0-606fd34cb1a1.png)
+![](https://cloud.githubusercontent.com/assets/2383901/19838015/ebab85e6-9e93-11e6-8283-93fc7a24ba44.png)
 
 ## What is it for?
 
