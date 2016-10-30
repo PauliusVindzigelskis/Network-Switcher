@@ -20,3 +20,5 @@ P. S. No need to enter password each time when switching connections - only at a
 1.30.2 | [Release Notes](https://github.com/PauliusVindzigelskis/Network-Switcher/wiki/Release-Notes)
 
 [Network Switcher.dmg](https://github.com/PauliusVindzigelskis/Network-Switcher/files/560576/Network.Switcher1.30.2.zip)
+
+<a target="_blank" href="http://www.hey.lt/details.php?id=networkswitcher"><img width="88" height="31" border="0" src="http://www.hey.lt/count.php?id=networkswitcher" alt="Hey.lt - Nemokamas lankytojų skaitliukas"></a>
